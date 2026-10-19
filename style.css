@@ -1,0 +1,590 @@
+/* =========================
+   GENERAL STYLES
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 75px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: lavender;
+    color: black;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    background: linear-gradient(
+        135deg,
+        indigo,
+        darkviolet,
+        blueviolet
+    );
+    color: white;
+    text-align: center;
+    padding: 55px 20px;
+}
+
+header h1 {
+    font-size: 36px;
+    margin-bottom: 12px;
+}
+
+header p {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.main-button {
+    display: inline-block;
+    background-color: white;
+    color: darkviolet;
+    text-decoration: none;
+    padding: 12px 22px;
+    border-radius: 7px;
+    font-weight: bold;
+    border: 2px solid white;
+    transition: 0.3s;
+}
+
+.main-button:hover {
+    background-color: orchid;
+    color: black;
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    background-color: indigo;
+    padding: 12px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 13px;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background-color: orchid;
+    color: black;
+}
+
+
+/* =========================
+   COMMON SECTIONS
+========================= */
+
+section {
+    background-color: lavenderblush;
+    margin: 25px auto;
+    padding: 30px;
+    width: 92%;
+    max-width: 1200px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+section h2 {
+    text-align: center;
+    color: black;
+    margin-bottom: 20px;
+    font-size: 27px;
+}
+
+section > p {
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   DATABASE TABLES
+========================= */
+
+.database-table {
+    margin: 18px 0;
+    border: 1px solid thistle;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: white;
+}
+
+.database-table summary {
+    cursor: pointer;
+    padding: 15px;
+    background-color: mediumpurple;
+    color: black;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.database-table summary:hover {
+    background-color: thistle;
+}
+
+.database-table[open] summary {
+    background-color: darkviolet;
+    color: white;
+}
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    padding: 15px;
+    background-color: lavenderblush;
+}
+
+#database table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    color: black;
+}
+
+#database th {
+    background-color: darkviolet;
+    color: white;
+    padding: 12px;
+    text-align: left;
+    white-space: nowrap;
+}
+
+#database td {
+    padding: 11px;
+    border: 1px solid thistle;
+    text-align: left;
+}
+
+#database tr:nth-child(even) {
+    background-color: lavender;
+}
+
+#database tr:hover {
+    background-color: thistle;
+}
+
+
+/* =========================
+   ER DIAGRAM SECTION
+========================= */
+
+#er-diagram {
+    overflow: hidden;
+}
+
+.er-description {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.er-legend {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.er-legend span {
+    background-color: thistle;
+    color: black;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+
+/* =========================
+   ER DIAGRAM SCROLL AREA
+========================= */
+
+.er-scroll {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    border: 1px solid thistle;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.er-canvas {
+    position: relative;
+    width: 1000px;
+    height: 790px;
+    margin: 0 auto;
+    background-color: white;
+}
+
+
+/* =========================
+   ER CONNECTOR LINES
+========================= */
+
+.er-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1000px;
+    height: 790px;
+    z-index: 1;
+    pointer-events: none;
+    overflow: visible;
+}
+
+.er-lines path {
+    fill: none;
+    stroke: #5b168f;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.er-lines text {
+    fill: #000000;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+/* =========================
+   ER TABLE CARDS
+========================= */
+
+.er-table {
+    position: absolute;
+    width: 180px;
+    background-color: lavender;
+    border: 2px solid mediumpurple;
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: 2;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+}
+
+.er-table h3 {
+    background-color: darkviolet;
+    color: white;
+    text-align: center;
+    padding: 10px 5px;
+    margin: 0;
+    font-size: 15px;
+    overflow-wrap: anywhere;
+}
+
+.er-table p {
+    padding: 7px 9px;
+    margin: 0;
+    border-bottom: 1px solid thistle;
+    color: black;
+    font-size: 12px;
+    overflow-wrap: anywhere;
+}
+
+.er-table p:last-child {
+    border-bottom: none;
+}
+
+.er-table b {
+    color: darkviolet;
+}
+
+
+/* =========================
+   ER TABLE POSITIONS
+
+   These positions are designed
+   for a 1000px-wide canvas.
+========================= */
+
+.candidates {
+    left: 10px;
+    top: 20px;
+}
+
+.companies {
+    left: 790px;
+    top: 20px;
+}
+
+.applications {
+    left: 270px;
+    top: 200px;
+}
+
+.jobs {
+    left: 550px;
+    top: 200px;
+}
+
+.recruiters {
+    left: 790px;
+    top: 300px;
+}
+
+.interviews {
+    left: 300px;
+    top: 450px;
+}
+
+.candidate-skills {
+    left: 10px;
+    top: 600px;
+}
+
+.skills {
+    left: 550px;
+    top: 600px;
+}
+
+
+/* =========================
+   ER RELATIONSHIP EXPLANATION
+========================= */
+
+.er-relationships {
+    background-color: lavender;
+    border-left: 5px solid darkviolet;
+    padding: 20px;
+    margin-top: 25px;
+    border-radius: 8px;
+}
+
+.er-relationships h3 {
+    margin-bottom: 12px;
+}
+
+.er-relationships ul {
+    padding-left: 22px;
+}
+
+.er-relationships li {
+    margin-bottom: 10px;
+}
+
+
+/* =========================
+   TECHNOLOGIES
+========================= */
+
+.technology-container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.technology-card {
+    background-color: thistle;
+    color: black;
+    padding: 22px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid mediumpurple;
+    transition: 0.3s;
+}
+
+.technology-card:hover {
+    transform: translateY(-5px);
+    background-color: plum;
+}
+
+.technology-card h3 {
+    margin-bottom: 10px;
+    color: darkviolet;
+}
+
+
+/* =========================
+   SQL QUERIES
+========================= */
+
+.query-box {
+    margin: 18px 0;
+    border: 1px solid thistle;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: white;
+}
+
+.query-box summary {
+    background-color: mediumpurple;
+    color: black;
+    padding: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.query-box summary:hover {
+    background-color: thistle;
+}
+
+.query-box[open] summary {
+    background-color: darkviolet;
+    color: white;
+}
+
+.query-box pre {
+    background-color: #21103b;
+    color: #f1e7ff;
+    padding: 20px;
+    overflow-x: auto;
+    line-height: 1.7;
+    font-size: 13px;
+    white-space: pre;
+}
+
+.query-box code {
+    font-family: Consolas, "Courier New", monospace;
+}
+
+
+/* =========================
+   GITHUB SECTION
+========================= */
+
+#contact {
+    text-align: center;
+}
+
+#contact p {
+    margin-bottom: 20px;
+}
+
+#contact .main-button {
+    background-color: darkviolet;
+    color: white;
+    border-color: darkviolet;
+}
+
+#contact .main-button:hover {
+    background-color: mediumpurple;
+    color: white;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background-color: indigo;
+    color: white;
+    text-align: center;
+    padding: 25px 15px;
+    margin-top: 30px;
+}
+
+footer h3 {
+    margin-bottom: 10px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+
+/* =========================
+   TABLET RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 900px) {
+
+    header h1 {
+        font-size: 30px;
+    }
+
+    .technology-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    section {
+        width: 95%;
+        padding: 22px;
+    }
+}
+
+
+/* =========================
+   MOBILE RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 35px 15px;
+    }
+
+    header h1 {
+        font-size: 25px;
+    }
+
+    header p {
+        font-size: 16px;
+    }
+
+    nav {
+        position: static;
+        gap: 3px;
+    }
+
+    nav a {
+        font-size: 13px;
+        padding: 9px;
+    }
+
+    section {
+        width: 95%;
+        padding: 18px;
+        margin: 18px auto;
+    }
+
+    section h2 {
+        font-size: 23px;
+    }
+
+    .technology-container {
+        grid-template-columns: 1fr;
+    }
+
+    .er-legend span {
+        font-size: 12px;
+    }
+
+    .query-box pre {
+        font-size: 12px;
+        padding: 14px;
+    }
+}

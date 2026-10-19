@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Job Portal Platform SQL Project showcasing database design, SQL queries, database tables, and entity relationship diagram.">
+
+    <title>Job Portal Platform SQL Project</title>
+
+    <!-- External CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header id="home">
+
+        <h1>Job Portal Platform SQL Project</h1>
+
+        <p>Database Design and SQL Query Analysis</p>
+
+        <a
+            href="https://github.com/hassanshaikmca/Job-Portal-SQL-Project"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="main-button">
+
+            View GitHub Project
+
+        </a>
+
+    </header>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <nav aria-label="Main navigation">
+
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#database">Database</a>
+        <a href="#er-diagram">ER Diagram</a>
+        <a href="#technologies">Technologies</a>
+        <a href="#queries">SQL Queries</a>
+        <a href="#contact">GitHub</a>
+
+    </nav>
+
+
+    <!-- =========================
+         ABOUT PROJECT
+    ========================== -->
+
+    <section id="about">
+
+        <h2>About My Project</h2>
+
+        <p>
+            The Job Portal Platform SQL Project is a database management
+            project developed using SQL. It manages information about
+            candidates, companies, recruiters, jobs, applications,
+            interviews, and skills.
+        </p>
+
+        <p>
+            This project demonstrates database creation, table design,
+            primary keys, foreign keys, data insertion, filtering,
+            sorting, aggregate functions, joins, and views.
+        </p>
+
+        <p>
+            The project also includes a portfolio website developed
+            using HTML and CSS to present the database structure and
+            SQL queries.
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         DATABASE TABLES
+    ========================== -->
+
+    <section id="database">
+
+        <h2>Database Tables</h2>
+
+        <p>
+            The Job Portal database contains eight tables.
+            Click a table name to view its columns, data types,
+            and key information.
+        </p>
+
+
+        <!-- TABLE 1: CANDIDATES -->
+
+        <details class="database-table">
+
+            <summary>01. Candidates Table</summary>
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Column Name</th>
+                            <th>Data Type</th>
+                            <th>Key</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr><td>candidate_id</td><td>INT</td><td>Primary Key</td></tr>
+                        <tr><td>full_name</td><td>VARCHAR(50)</td><td>-</td></tr>
+                        <tr><td>email</td><td>VARCHAR(50)</td><td>-</td></tr>
+                        <tr><td>phone</td><td>VARCHAR(20)</td><td>-</td></tr>
+                        <tr><td>location</td><td>VARCHAR(50)</td><td>-</td></tr>
+                        <tr><td>experience_years</td><td>INT</td><td>-</td></tr>
+                        <tr><td>resume_url</td><td>VARCHAR(50)</td><td>-</td></tr>
+                        <tr><td>created_at</td><td>DATE</td><td>-</td></tr>
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </details>
+
+
+        <!-- TABLE 2: COMPANIES -->
+
+        <details class="database-table">
+
+            <summary>02. Companies Table</summary>
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Column Name</th>
+                            <th>Data Type</th>
+                            <th>Key</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr><td>company_id</td><td>INT</td><td>Primary Key</td></tr>
+                        <tr><td>company_name</td><td>VARCHAR(50)</td><td>-</td></tr>
+                        <tr><td>industry</td><td>VARCHAR(50)</td><td>-</td></tr>
+                        <tr><td>website</td><td>VARCHAR(50)</td><td>-</td></tr>
+                        <tr><td>location</td><td>VARCHAR(50)</td><td>-</td></tr>
+                        <tr><td>about</td><td>VARCHAR(100)</td><td>-</td></tr>
+                        <tr><td>created_at</td><td>DATE</td><td>-</td></tr>
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </details>
+
+
+        <!-- TABLE 3: RECRUITERS -->
+
+        <details class="database-table">
+
+            <summary>03. Recruiters Table</summary>
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Column Name</th>
+                            <th>Data Type</th>
+                            <th>Key</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr><td>recruiter_id</td><td>INT</td><td>Primary Key</td></tr>
+                        <tr><td>company_id</td><td>INT</td><td>Relationship column</td></tr>
+                        <tr><td>full_name</td><td>VARCHAR(100)</td><td>-</td></tr>
+                        <tr><td>email</td><td>VARCHAR(100)</td><td>-</td></tr>
+                        <tr><td>phone</td><td>VARCHAR(15)</td><td>-</td></tr>
+                        <tr><td>designation</td><td>VARCHAR(50)</td><td>-</td></tr>
+                        <tr><td>created_at</td><td>DATE</td><td>-</td></tr>
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </details>
+
+
+        <!-- TABLE 4: JOBS -->
+
+        <details class="database-table">
+
+            <summary>04. Jobs Table</summary>
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Column Name</th>
+                            <th>Data Type</th>
+                            <th>Key</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr><td>job_id</td><td>INT</td><td>Primary Key</td></tr>
+                        <tr><td>company_id</td><td>INT</td><td>Foreign Key</td></tr>
+                        <tr><td>recruiter_id</td><td>INT</td><td>Foreign Key</td></tr>
+                        <tr><td>job_title</td><td>VARCHAR(100)</td><td>-</td></tr>
+                        <tr><td>job_description</td><td>VARCHAR(255)</td><td>-</td></tr>
+                        <tr><td>location</td><td>VARCHAR(100)</td><td>-</td></tr>
+                        <tr><td>employment_type</td><td>VARCHAR(50)</td><td>-</td></tr>
+                        <tr><td>experience_required</td><td>INT</td><td>-</td></tr>
+                        <tr><td>salary_min</td><td>DECIMAL(10,2)</td><td>-</td></tr>
+                        <tr><td>salary_max</td><td>DECIMAL(10,2)</td><td>-</td></tr>
+                        <tr><td>status</td><td>VARCHAR(20)</td><td>-</td></tr>
+                        <tr><td>created_at</td><td>DATE</td><td>-</td></tr>
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </details>
+
+
+        <!-- TABLE 5: APPLICATIONS -->
+
+        <details class="database-table">
+
+            <summary>05. Applications Table</summary>
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Column Name</th>
+                            <th>Data Type</th>
+                            <th>Key</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr><td>application_id</td><td>INT</td><td>Primary Key</td></tr>
+                        <tr><td>candidate_id</td><td>INT</td><td>Foreign Key</td></tr>
+                        <tr><td>job_id</td><td>INT</td><td>Foreign Key</td></tr>
+                        <tr><td>applied_at</td><td>DATE</td><td>-</td></tr>
+                        <tr><td>status</td><td>VARCHAR(30)</td><td>-</td></tr>
+                        <tr><td>cover_letter</td><td>VARCHAR(255)</td><td>-</td></tr>
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </details>
+
+
+        <!-- TABLE 6: INTERVIEWS -->
+
+        <details class="database-table">
+
+            <summary>06. Interviews Table</summary>
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Column Name</th>
+                            <th>Data Type</th>
+                            <th>Key</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr><td>interview_id</td><td>INT</td><td>Primary Key</td></tr>
+                        <tr><td>application_id</td><td>INT</td><td>Foreign Key</td></tr>
+                        <tr><td>job_id</td><td>INT</td><td>Foreign Key</td></tr>
+                        <tr><td>interview_round</td><td>VARCHAR(50)</td><td>-</td></tr>
+                        <tr><td>scheduled_at</td><td>DATE</td><td>-</td></tr>
+                        <tr><td>interview_type</td><td>VARCHAR(20)</td><td>-</td></tr>
+                        <tr><td>status</td><td>VARCHAR(20)</td><td>-</td></tr>
+                        <tr><td>feedback</td><td>VARCHAR(255)</td><td>-</td></tr>
+                        <tr><td>created_at</td><td>DATE</td><td>-</td></tr>
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </details>
+
+
+        <!-- TABLE 7: SKILLS -->
+
+        <details class="database-table">
+
+            <summary>07. Skills Table</summary>
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Column Name</th>
+                            <th>Data Type</th>
+                            <th>Key</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr><td>skill_id</td><td>INT</td><td>Primary Key</td></tr>
+                        <tr><td>skill_name</td><td>VARCHAR(50)</td><td>-</td></tr>
+                        <tr><td>created_at</td><td>DATE</td><td>-</td></tr>
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </details>
+
+
+        <!-- TABLE 8: CANDIDATE SKILLS -->
+
+        <details class="database-table">
+
+            <summary>08. Candidate_Skills Table</summary>
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Column Name</th>
+                            <th>Data Type</th>
+                            <th>Key</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr><td>candidate_skill_id</td><td>INT</td><td>Primary Key</td></tr>
+                        <tr><td>candidate_id</td><td>INT</td><td>Foreign Key</td></tr>
+                        <tr><td>skill_id</td><td>INT</td><td>Foreign Key</td></tr>
+                        <tr><td>proficiency_level</td><td>VARCHAR(20)</td><td>-</td></tr>
+                        <tr><td>years_of_experience</td><td>INT</td><td>-</td></tr>
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </details>
+
+    </section>
+
+
+    <!-- =========================
+         ER DIAGRAM
+    ========================== -->
+
+    <section id="er-diagram">
+
+        <h2>Entity Relationship Diagram</h2>
+
+        <p class="er-description">
+            This diagram shows the relationships between the
+            eight tables in the Job Portal database.
+        </p>
+
+        <div class="er-legend">
+            <span>PK = Primary Key</span>
+            <span>FK = Foreign Key</span>
+            <span>1 = One</span>
+            <span>* = Many</span>
+        </div>
+
+        <div class="er-scroll">
+
+            <div class="er-canvas">
+
+                <!-- SVG CONNECTORS -->
+
+                <svg
+                    class="er-lines"
+                    viewBox="0 0 1000 790"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-label="Database table relationship connectors">
+
+                    <!-- Candidates to Applications -->
+                    <path d="M190 120 H235 V240 H270"/>
+                    <text x="198" y="112">1</text>
+                    <text x="250" y="230">*</text>
+
+                    <!-- Jobs to Applications -->
+                    <path d="M550 260 H485"/>
+                    <text x="535" y="250">1</text>
+                    <text x="490" y="250">*</text>
+
+                    <!-- Companies to Jobs -->
+                    <path d="M880 180 V190 H680 V200"/>
+                    <text x="888" y="175">1</text>
+                    <text x="685" y="210">*</text>
+
+                    <!-- Recruiters to Jobs -->
+                    <path d="M790 340 H750"/>
+                    <text x="775" y="330">1</text>
+                    <text x="735" y="330">*</text>
+
+                    <!-- Applications to Interviews -->
+                    <path d="M375 350 V450"/>
+                    <text x="385" y="365">1</text>
+                    <text x="385" y="440">*</text>
+
+                    <!-- Jobs to Interviews -->
+                    <path d="M650 350 V400 H450 V450"/>
+                    <text x="660" y="365">1</text>
+                    <text x="460" y="440">*</text>
+
+                    <!-- Candidates to Candidate_Skills -->
+                    <path d="M100 180 V580 H100 V600"/>
+                    <text x="108" y="200">1</text>
+                    <text x="110" y="595">*</text>
+
+                    <!-- Skills to Candidate_Skills -->
+                    <path d="M550 650 H190"/>
+                    <text x="530" y="640">1</text>
+                    <text x="195" y="640">*</text>
+
+                </svg>
+
+
+                <!-- CANDIDATES TABLE -->
+
+                <div class="er-table candidates">
+
+                    <h3>Candidates</h3>
+
+                    <p><b>PK</b> candidate_id</p>
+                    <p>full_name</p>
+                    <p>email</p>
+                    <p>phone</p>
+                    <p>location</p>
+
+                </div>
+
+
+                <!-- APPLICATIONS TABLE -->
+
+                <div class="er-table applications">
+
+                    <h3>Applications</h3>
+
+                    <p><b>PK</b> application_id</p>
+                    <p><b>FK</b> candidate_id</p>
+                    <p><b>FK</b> job_id</p>
+                    <p>applied_at</p>
+                    <p>status</p>
+
+                </div>
+
+
+                <!-- JOBS TABLE -->
+
+                <div class="er-table jobs">
+
+                    <h3>Jobs</h3>
+
+                    <p><b>PK</b> job_id</p>
+                    <p><b>FK</b> company_id</p>
+                    <p><b>FK</b> recruiter_id</p>
+                    <p>job_title</p>
+                    <p>status</p>
+
+                </div>
+
+
+                <!-- COMPANIES TABLE -->
+
+                <div class="er-table companies">
+
+                    <h3>Companies</h3>
+
+                    <p><b>PK</b> company_id</p>
+                    <p>company_name</p>
+                    <p>industry</p>
+                    <p>website</p>
+                    <p>location</p>
+
+                </div>
+
+
+                <!-- RECRUITERS TABLE -->
+
+                <div class="er-table recruiters">
+
+                    <h3>Recruiters</h3>
+
+                    <p><b>PK</b> recruiter_id</p>
+                    <p>company_id</p>
+                    <p>full_name</p>
+                    <p>email</p>
+
+                </div>
+
+
+                <!-- INTERVIEWS TABLE -->
+
+                <div class="er-table interviews">
+
+                    <h3>Interviews</h3>
+
+                    <p><b>PK</b> interview_id</p>
+                    <p><b>FK</b> application_id</p>
+                    <p><b>FK</b> job_id</p>
+                    <p>interview_round</p>
+                    <p>status</p>
+
+                </div>
+
+
+                <!-- CANDIDATE SKILLS TABLE -->
+
+                <div class="er-table candidate-skills">
+
+                    <h3>Candidate_Skills</h3>
+
+                    <p><b>PK</b> candidate_skill_id</p>
+                    <p><b>FK</b> candidate_id</p>
+                    <p><b>FK</b> skill_id</p>
+                    <p>proficiency_level</p>
+
+                </div>
+
+
+                <!-- SKILLS TABLE -->
+
+                <div class="er-table skills">
+
+                    <h3>Skills</h3>
+
+                    <p><b>PK</b> skill_id</p>
+                    <p>skill_name</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- RELATIONSHIP EXPLANATION -->
+
+        <div class="er-relationships">
+
+            <h3>Database Relationships</h3>
+
+            <ul>
+                <li>
+                    <strong>Candidates → Applications:</strong>
+                    One candidate can submit multiple applications.
+                </li>
+
+                <li>
+                    <strong>Jobs → Applications:</strong>
+                    One job can receive multiple applications.
+                </li>
+
+                <li>
+                    <strong>Companies → Jobs:</strong>
+                    One company can post multiple jobs.
+                </li>
+
+                <li>
+                    <strong>Recruiters → Jobs:</strong>
+                    One recruiter can be associated with multiple jobs.
+                </li>
+
+                <li>
+                    <strong>Applications → Interviews:</strong>
+                    One application can have multiple interview records.
+                </li>
+
+                <li>
+                    <strong>Jobs → Interviews:</strong>
+                    One job can be associated with multiple interview records.
+                </li>
+
+                <li>
+                    <strong>Candidates → Candidate_Skills:</strong>
+                    One candidate can have multiple skill records.
+                </li>
+
+                <li>
+                    <strong>Skills → Candidate_Skills:</strong>
+                    One skill can be associated with multiple candidates.
+                </li>
+            </ul>
+
+            <p>
+                <strong>Note:</strong>
+                The Recruiters table contains a company_id column,
+                but the supplied SQL definition does not declare it
+                as a foreign key. The Jobs table does declare foreign
+                keys to Companies and Recruiters.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         TECHNOLOGIES
+    ========================== -->
+
+    <section id="technologies">
+
+        <h2>Technologies Used</h2>
+
+        <div class="technology-container">
+
+            <div class="technology-card">
+                <h3>SQL</h3>
+                <p>Database queries and data management.</p>
+            </div>
+
+            <div class="technology-card">
+                <h3>Database Design</h3>
+                <p>Tables, primary keys, and foreign keys.</p>
+            </div>
+
+            <div class="technology-card">
+                <h3>HTML</h3>
+                <p>Website structure and content.</p>
+            </div>
+
+            <div class="technology-card">
+                <h3>CSS</h3>
+                <p>Website colours, layout, and styling.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SQL QUERIES
+    ========================== -->
+
+    <section id="queries">
+
+        <h2>SQL Queries</h2>
+
+        <p>
+            Click each heading to expand and view the SQL code.
+        </p>
+
+
+        <!-- QUERY 1: DATABASE SETUP -->
+
+        <details class="query-box">
+
+            <summary>01. Database Setup</summary>
+
+            <pre><code>CREATE DATABASE project;
+
+USE project;</code></pre>
+
+        </details>
+
+
+        <!-- QUERY 2: CREATE TABLES -->
+
+        <details class="query-box">
+
+            <summary>02. Create Tables</summary>
+
+            <pre><code>CREATE TABLE Candidates (
+    candidate_id INT PRIMARY KEY,
+    full_name VARCHAR(50),
+    email VARCHAR(50),
+    phone VARCHAR(20),
+    location VARCHAR(50),
+    experience_years INT,
+    resume_url VARCHAR(50),
+    created_at DATE
+);
+
+CREATE TABLE Companies (
+    company_id INT PRIMARY KEY,
+    company_name VARCHAR(50),
+    industry VARCHAR(50),
+    website VARCHAR(50),
+    location VARCHAR(50),
+    about VARCHAR(100),
+    created_at DATE
+);
+
+CREATE TABLE Recruiters (
+    recruiter_id INT PRIMARY KEY,
+    company_id INT,
+    full_name VARCHAR(100),
+    email VARCHAR(100),
+    phone VARCHAR(15),
+    designation VARCHAR(50),
+    created_at DATE
+);
+
+CREATE TABLE Jobs (
+    job_id INT PRIMARY KEY,
+    company_id INT,
+    recruiter_id INT,
+    job_title VARCHAR(100),
+    job_description VARCHAR(255),
+    location VARCHAR(100),
+    employment_type VARCHAR(50),
+    experience_required INT,
+    salary_min DECIMAL(10,2),
+    salary_max DECIMAL(10,2),
+    status VARCHAR(20),
+    created_at DATE,
+    FOREIGN KEY (company_id)
+        REFERENCES Companies(company_id),
+    FOREIGN KEY (recruiter_id)
+        REFERENCES Recruiters(recruiter_id)
+);
+
+CREATE TABLE Applications (
+    application_id INT PRIMARY KEY,
+    candidate_id INT,
+    job_id INT,
+    applied_at DATE,
+    status VARCHAR(30),
+    cover_letter VARCHAR(255),
+    FOREIGN KEY (candidate_id)
+        REFERENCES Candidates(candidate_id),
+    FOREIGN KEY (job_id)
+        REFERENCES Jobs(job_id)
+);
+
+CREATE TABLE Interviews (
+    interview_id INT PRIMARY KEY,
+    application_id INT,
+    job_id INT,
+    interview_round VARCHAR(50),
+    scheduled_at DATE,
+    interview_type VARCHAR(20),
+    status VARCHAR(20),
+    feedback VARCHAR(255),
+    created_at DATE,
+    FOREIGN KEY (application_id)
+        REFERENCES Applications(application_id),
+    FOREIGN KEY (job_id)
+        REFERENCES Jobs(job_id)
+);
+
+CREATE TABLE Skills (
+    skill_id INT PRIMARY KEY,
+    skill_name VARCHAR(50),
+    created_at DATE
+);
+
+CREATE TABLE Candidate_Skills (
+    candidate_skill_id INT PRIMARY KEY,
+    candidate_id INT,
+    skill_id INT,
+    proficiency_level VARCHAR(20),
+    years_of_experience INT,
+    FOREIGN KEY (candidate_id)
+        REFERENCES Candidates(candidate_id),
+    FOREIGN KEY (skill_id)
+        REFERENCES Skills(skill_id)
+);</code></pre>
+
+        </details>
+
+
+        <!-- QUERY 3: INSERT SAMPLE DATA -->
+
+        <details class="query-box">
+
+            <summary>03. Insert Sample Data</summary>
+
+            <pre><code>INSERT INTO Candidates VALUES
+(1, 'Neha', 'neha@gmail.com', '9000000001',
+ 'Hyderabad', 2, 'resume1.pdf', '2025-02-01'),
+(2, 'Hassan', 'hassan@gmail.com', '9000000002',
+ 'Bangalore', 3, 'resume2.pdf', '2025-02-02'),
+(3, 'Sneha', 'sneha@gmail.com', '9000000003',
+ 'Chennai', 1, 'resume3.pdf', '2025-02-03'),
+(4, 'Akhil', 'akhil@gmail.com', '9000000004',
+ 'Pune', 4, 'resume4.pdf', '2025-02-04'),
+(5, 'Divya', 'divya@gmail.com', '9000000005',
+ 'Noida', 2, 'resume5.pdf', '2025-02-05');
+
+INSERT INTO Companies VALUES
+(101, 'TCS', 'IT', 'www.tcs.com', 'Hyderabad',
+ 'Software Services', '2025-01-01'),
+(102, 'Infosys', 'IT', 'www.infosys.com', 'Bangalore',
+ 'Technology Company', '2025-01-02'),
+(103, 'Wipro', 'IT', 'www.wipro.com', 'Chennai',
+ 'IT Solutions', '2025-01-03'),
+(104, 'Accenture', 'Consulting', 'www.accenture.com', 'Pune',
+ 'Consulting Services', '2025-01-04'),
+(105, 'HCL', 'IT', 'www.hcl.com', 'Noida',
+ 'Technology Services', '2025-01-05');
+
+INSERT INTO Recruiters VALUES
+(201, 101, 'Ravi Kumar', 'ravi@tcs.com',
+ '9876543210', 'HR', '2025-01-10'),
+(202, 102, 'Priya Sharma', 'priya@infosys.com',
+ '9876543211', 'Recruiter', '2025-01-11'),
+(203, 103, 'Arjun Rao', 'arjun@wipro.com',
+ '9876543212', 'HR Manager', '2025-01-12'),
+(204, 104, 'Anita Singh', 'anita@accenture.com',
+ '9876543213', 'Talent Lead', '2025-01-13'),
+(205, 105, 'Kiran Patel', 'kiran@hcl.com',
+ '9876543214', 'Recruiter', '2025-01-14');
+
+INSERT INTO Jobs VALUES
+(301, 101, 201, 'Python Developer', 'Python Development',
+ 'Hyderabad', 'Full-Time', 2, 400000, 700000,
+ 'Open', '2025-03-01'),
+(302, 102, 202, 'Data Analyst', 'Data Analysis',
+ 'Bangalore', 'Full-Time', 1, 350000, 600000,
+ 'Open', '2025-03-02'),
+(303, 103, 203, 'Java Developer', 'Java Development',
+ 'Chennai', 'Full-Time', 3, 500000, 800000,
+ 'Open', '2025-03-03'),
+(304, 104, 204, 'BI Developer', 'Power BI Reports',
+ 'Pune', 'Full-Time', 2, 450000, 750000,
+ 'Open', '2025-03-04'),
+(305, 105, 205, 'Frontend Developer', 'HTML CSS JS',
+ 'Noida', 'Full-Time', 1, 300000, 550000,
+ 'Open', '2025-03-05');
+
+INSERT INTO Applications VALUES
+(401, 1, 301, '2025-04-01', 'Applied',
+ 'Interested in Python Role'),
+(402, 2, 302, '2025-04-02', 'Shortlisted',
+ 'Data Analyst Position'),
+(403, 3, 303, '2025-04-03', 'Applied',
+ 'Java Developer Role'),
+(404, 4, 304, '2025-04-04', 'Shortlisted',
+ 'BI Developer Position'),
+(405, 5, 305, '2025-04-05', 'Applied',
+ 'Frontend Developer Role');
+
+INSERT INTO Interviews VALUES
+(501, 401, 301, 'Technical', '2025-05-01',
+ 'Online', 'Scheduled', 'Pending', '2025-04-20'),
+(502, 402, 302, 'HR', '2025-05-02',
+ 'Offline', 'Completed', 'Selected', '2025-04-21'),
+(503, 403, 303, 'Technical', '2025-05-03',
+ 'Online', 'Scheduled', 'Pending', '2025-04-22'),
+(504, 404, 304, 'Manager Round', '2025-05-04',
+ 'Offline', 'Completed', 'Selected', '2025-04-23'),
+(505, 405, 305, 'Technical', '2025-05-05',
+ 'Online', 'Scheduled', 'Pending', '2025-04-24');
+
+INSERT INTO Skills VALUES
+(601, 'Python', '2025-01-01'),
+(602, 'SQL', '2025-01-01'),
+(603, 'Java', '2025-01-01'),
+(604, 'Power BI', '2025-01-01'),
+(605, 'HTML', '2025-01-01');
+
+INSERT INTO Candidate_Skills VALUES
+(701, 1, 601, 'Expert', 2),
+(702, 1, 602, 'Intermediate', 1),
+(703, 2, 604, 'Expert', 3),
+(704, 3, 603, 'Beginner', 2),
+(705, 4, 601, 'Intermediate', 4),
+(706, 5, 605, 'Beginner', 1);</code></pre>
+
+        </details>
+
+
+        <!-- QUERY 4: SELECT AND WHERE -->
+
+        <details class="query-box">
+
+            <summary>04. SELECT and WHERE</summary>
+
+            <pre><code>SELECT * FROM Candidates;
+
+SELECT * FROM Companies;
+
+SELECT * FROM Skills;
+
+SELECT * FROM Applications;
+
+SELECT *
+FROM Jobs
+WHERE location = 'Hyderabad';</code></pre>
+
+        </details>
+
+
+        <!-- QUERY 5: ORDER BY, GROUP BY AND HAVING -->
+
+        <details class="query-box">
+
+            <summary>05. ORDER BY, GROUP BY and HAVING</summary>
+
+            <pre><code>SELECT *
+FROM Jobs
+ORDER BY salary_min;
+
+SELECT
+    company_id,
+    COUNT(*) AS total_jobs
+FROM Jobs
+GROUP BY company_id;
+
+SELECT
+    company_id,
+    COUNT(*) AS total_jobs
+FROM Jobs
+GROUP BY company_id
+HAVING COUNT(*) >= 1;</code></pre>
+
+        </details>
+
+
+        <!-- QUERY 6: AGGREGATE FUNCTIONS -->
+
+        <details class="query-box">
+
+            <summary>06. Aggregate Functions</summary>
+
+            <pre><code>SELECT COUNT(*) AS total_candidates
+FROM Candidates;
+
+SELECT MAX(salary_max) AS highest_salary
+FROM Jobs;
+
+SELECT MIN(salary_min) AS lowest_salary
+FROM Jobs;
+
+SELECT SUM(salary_max) AS total_max_salary
+FROM Jobs;
+
+SELECT AVG(salary_max) AS average_max_salary
+FROM Jobs;</code></pre>
+
+        </details>
+
+
+        <!-- QUERY 7: INNER JOIN -->
+
+        <details class="query-box">
+
+            <summary>07. INNER JOIN</summary>
+
+            <pre><code>SELECT
+    Companies.company_name,
+    Recruiters.full_name,
+    Recruiters.designation
+FROM Companies
+INNER JOIN Recruiters
+    ON Companies.company_id = Recruiters.company_id;</code></pre>
+
+        </details>
+
+
+        <!-- QUERY 8: LIMIT AND OFFSET -->
+
+        <details class="query-box">
+
+            <summary>08. LIMIT and OFFSET</summary>
+
+            <pre><code>SELECT *
+FROM Candidates
+LIMIT 3 OFFSET 2;
+
+SELECT *
+FROM Candidates
+LIMIT 2, 3;
+
+SELECT
+    job_title,
+    salary_max
+FROM Jobs
+ORDER BY salary_max DESC
+LIMIT 2;
+
+SELECT
+    job_title,
+    salary_max
+FROM Jobs
+ORDER BY salary_max DESC
+LIMIT 2 OFFSET 2;</code></pre>
+
+        </details>
+
+
+        <!-- QUERY 9: DATABASE VIEWS -->
+
+        <details class="query-box">
+
+            <summary>09. Database Views</summary>
+
+            <pre><code>CREATE VIEW Candidate_Public_View AS
+SELECT
+    candidate_id,
+    full_name,
+    location,
+    experience_years
+FROM Candidates;
+
+SELECT *
+FROM Candidate_Public_View;
+
+CREATE VIEW Job_Public_View AS
+SELECT
+    job_id,
+    job_title,
+    company_id,
+    location,
+    employment_type
+FROM Jobs;
+
+SELECT *
+FROM Job_Public_View;</code></pre>
+
+        </details>
+
+    </section>
+
+
+    <!-- =========================
+         GITHUB REPOSITORY
+    ========================== -->
+
+    <section id="contact">
+
+        <h2>Project Repository</h2>
+
+        <p>
+            Explore the complete project files and SQL scripts
+            on GitHub.
+        </p>
+
+        <a
+            href="https://github.com/hassanshaikmca/Job-Portal-SQL-Project"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="main-button">
+
+            Open GitHub Repository
+
+        </a>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <h3>Job Portal Platform SQL Project</h3>
+
+        <p>Created by Hassan Shaik</p>
+
+        <p>Database Management Project | 2026</p>
+
+    </footer>
+
+</body>
+
+</html>
